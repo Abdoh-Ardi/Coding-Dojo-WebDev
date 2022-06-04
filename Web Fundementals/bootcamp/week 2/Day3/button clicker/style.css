@@ -1,0 +1,121 @@
+/* navBar */
+* {
+    margin: 0%;
+    padding: 0%;
+}
+.aligner{
+    max-width: 1000px;
+    margin: 0px auto;
+    
+}
+
+.navBar{
+    max-width: 1000x;
+    display: flex;
+    flex-direction: row;
+    background-color: lightgrey;
+    /* justify-content: space-evenly; */
+    /* align-items: center; */
+    justify-content: space-around;
+    justify-items: center;
+    align-items: center;
+    /* height: 300px; */
+    margin-bottom: 20px;
+    padding-right: auto;
+}
+.searchBox{
+        padding-right: 150px;
+}
+.searchBox::placeholder{
+    
+}
+.loginBtn{
+    box-shadow: 3px 3px  black;
+    width: 50px;
+    color: white;
+    background-color: #2b78e4;
+}
+/* nav end */
+/* columns start */
+.content{
+    display: flex;
+    justify-content: space-between;
+}
+.leftColumn{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-evenly; */
+    
+}
+
+.difCard{
+    
+    width: 500px;
+    border: solid black;
+    margin-bottom: 20px;
+    
+}
+
+h1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+.wordType{
+    display: inline-block;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+.wordDifinition{
+    display: inline-block;
+    /* text-align: center; */
+    margin-left: 40px;
+    font-family:  Georgia, 'Times New Roman', Times, serif;
+
+}
+.likes{
+    display: block;
+}
+.nounOrNot{
+    text-align: center;
+    
+}
+
+.likes{
+    background-color: #fed965;
+    font-weight: 700;
+    text-align: center;
+    margin: 10px;
+    padding: 5px;
+    padding-right: 7px;
+    box-shadow: 3px 3px black;
+}
+
+.rightColumn{
+    display: flex;
+    flex-direction: column;
+}
+.card{
+    border: solid black;
+    width: 300px;
+    /* height: 150px; */
+    font-family:  Georgia, 'Times New Roman', Times, serif;  
+    padding: 10px; 
+}
+
+.addDifBtn{
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+    /* padding:  1px 150px; */
+    width: 300px;
+    height: 40px;
+    background-color: #93c47d;
+    box-shadow: 3px 3px black;
+    border: solid black;
+    /* word-wrap: ; */
+}
+
+
+
+
+

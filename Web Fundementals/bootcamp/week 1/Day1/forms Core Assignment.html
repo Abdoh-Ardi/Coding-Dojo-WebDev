@@ -1,0 +1,63 @@
+<!-- Name: Abdoh-Ardi
+Email: Abdoh.Ardi3@gmail.com -->
+<h1>Registration Form</h1>
+<form action="" method="post">
+    <div>
+        <label for="firstName">First Name: * </label>
+        <input type="text" name="firstName" id="firstName" required="required">
+    </div>
+    <div>
+        <label for="lastName">Last Name: * </label>
+        <input type="text" id="lastName" required="required">
+    </div>
+    <div>
+        <label for="email">Email Address: * </label>
+        <input type="email" name="email" id="email" required="required">
+    </div>
+    <div>
+        <label for="password">Password: * </label>
+        <input type="password" name="password" id="password" required="required">
+    </div>
+    <div>
+        <label for="confirmPassword">Confirm Password: * </label>
+        <input type="password" name="confirmPassword" id="confirmPassword" required="required">
+    </div>
+    <div>
+        <label for="birthDay">Birthday: </label>
+        <input type="Date" name="birthDay" id="birthDay">
+    </div>
+    <div>
+        <label for="gender">Gender Identity:</label>
+        <br>
+        <input type="radio" name="gender" id="male">
+        <label for="male">male</label>
+
+        <input type="radio" name="gender" id="female">
+        <label for="female">female</label>
+
+        <input type="radio" name="gender" id="non">
+        <label for="non">None-binary</label>
+
+        <input type="radio" name="gender" id="noAnswer">
+        <label for="noAnswer">I prefer not to answer</label>
+    </div>
+    <div>
+        <label for="description">A short description about myself:</label>
+        <br>
+        <textarea name="description" id="description" cols="30" rows="10"></textarea>
+    </div>
+    <div>
+        <label for="favLanguage">Favorite Language: </label>
+        <select name="select" id="favLanguage">
+            <option>JavaScript</option>
+            <option>C#</option>
+        </select>
+    </div>
+    <div>
+        <input type="checkbox" name="checkbox" id="checkBox">
+        <label for="checkBox">Yes, I would like to recieve periodic email updates</label>
+    </div>
+    <input type="submit" value="Create Account">
+    <br>
+    <label for="submit">* Indicates a required field</label>
+</form>

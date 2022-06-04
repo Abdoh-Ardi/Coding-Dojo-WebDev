@@ -1,0 +1,93 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+.aligner {
+    max-width: 700px;
+    margin: 0px auto;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card,
+.firstCard {
+    width: 410px;
+    border: solid black;
+    /* padding-bottom: 200px; */
+    height: 130px;
+    /* margin-top: 100px; */
+}
+
+.card {
+    margin-top: 10px;
+}
+
+.cardHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.userName {
+    padding: 10px;
+    /* margin-right: 60px; */
+}
+
+
+.likeBtn {
+    box-shadow: 3px 3px black;
+    background-color: orange;
+    width: 60px;
+    height: 30px;
+}
+
+.about {
+    margin-left: 20px;
+    padding-right: 30px;
+
+
+}
+
+
+/* part 2 changes */
+
+.navBar {
+    background-color: black;
+    color: white;
+    padding: 5px;
+}
+
+.title {}
+
+.contentTitle {
+    text-align: center;
+}
+
+.idCard {
+    border: solid black;
+
+    max-width: 200px;
+
+    max-height: 250px;
+
+}
+
+img {
+    display: block;
+    margin: 20px auto;
+
+    height: 80px;
+}
+
+a.addAvatarLink {
+    margin: 50px;
+}
+
+.user {
+    text-align: center;
+    margin: 30px auto;
+}
