@@ -5,3 +5,5 @@ note
 *.zip
 # *.mp4
 *.txt
+*.code-workspace
+my_enviroments/
