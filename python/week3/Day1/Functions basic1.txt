@@ -1,0 +1,66 @@
+expected:5
+Actual: 5
+
+expected:10
+Actual: 10
+
+expected:5
+Actual: 5
+
+expected:5
+Actual: 5
+
+expected:
+Actual: None
+
+expected: error
+Actual: TypeError: unsupported operand type(s) for +: 'NoneType' and 'NoneType'
+
+expected: 25
+Actual: 25
+
+expected: 100
+10
+Actual: 100
+10
+
+expected: 7
+14
+21
+Actual: 7
+14
+21
+
+expected: 8
+Actual: 8
+
+expected: 500
+500
+300
+300
+
+Actual: 500
+500
+300
+500
+
+
+expected: 500
+500
+300
+300
+Actual: 
+500
+500
+300
+300
+
+
+expected:1
+3
+2
+
+Actual: 1
+3
+2
+
