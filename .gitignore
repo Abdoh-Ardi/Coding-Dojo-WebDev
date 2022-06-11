@@ -7,3 +7,4 @@ note
 # *.mp4
 *.code-workspace
 my_enviroments/
+.idea/
