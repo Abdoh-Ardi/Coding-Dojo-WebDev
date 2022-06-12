@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-grow: 1;
+    flex-basis: 1px;
+    flex-wrap: wrap;
+    max-width: 700px;
+    /* max-height: 1px; */
+}
+
+.box1,
+.box2 {
+
+    height: 50px;
+    width: 90px;
+    background-color: red;
+    max-width: 600px;
+    margin: -3px;
+
+}
+
+.box2 {
+    background-color: black;
+}
