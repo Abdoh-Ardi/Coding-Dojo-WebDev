@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> -->
+    <style>
+        h1 {
+            /* margin: 0px auto; */
+        }
+
+        .box {
+            display: inline-block;
+            background-color: {{ color }};
+            height: 100px;
+            width: 100px;
+            margin: 10px;
+            border: solid black;
+        }
+
+        .aligner {
+            display: flex;
+            margin: 0px auto;
+            /* max-width: 100px; */
+            flex-direction: column;
+            align-items: center;
+            /* max-width: 900px; */
+        }
+        .container{
+            /* display: inline-flexboxs; */
+            max-width: 600px;
+            /* justify-content:center ; */
+            /* align-items: center; */
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="aligner">
+        <h1>Welcome!</h1>
+        <div class="container">
+            {% for x in range(times) %}
+            <div class="box"></div>
+            {% endfor %}
+            <!-- <div class="box"></div>
+            <div class="box"></div> -->
+            
+        </div>
+    </div>
+</body>
+
+</html>
