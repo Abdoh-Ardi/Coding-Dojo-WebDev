@@ -9,3 +9,4 @@ note
 my_enviroments/
 .idea/
 *.cpython-310.pyc
+foo.py
