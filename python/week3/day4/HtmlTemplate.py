@@ -11,7 +11,7 @@ def index():
    {'first_name' : 'KB', 'last_name' : 'Tonel'}
 ]
    
-    return render_template('htmlTemplate.html',data=users,)
+    return render_template('htmlTemplate.html',data=users)
 
 if __name__ == '__main__':
     app.run(debug=True)
