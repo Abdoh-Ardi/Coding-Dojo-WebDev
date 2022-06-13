@@ -3,26 +3,14 @@
     padding: 0;
 }
 
-.container {
-    display: flex;
-    flex-grow: 1;
-    flex-basis: 1px;
-    flex-wrap: wrap;
-    max-width: 700px;
-    /* max-height: 1px; */
+.color1{
+    background-color: blue;
 }
-
-.box1,
-.box2 {
-
-    height: 50px;
-    width: 90px;
+.color2{
     background-color: red;
-    max-width: 600px;
-    margin: -3px;
-
 }
 
-.box2 {
-    background-color: black;
+table tr td{
+    width: 50px;
+    height: 50px;
 }

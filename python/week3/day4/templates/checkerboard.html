@@ -11,30 +11,35 @@
 </head>
 
 <body>
-    <div class="container">
-
-
-        {% for i in range(size) %}
-
-
-
-        {% if i % 2 == 0 %}
-        {% for j in range(8) %}
-        <div class="box1"></div>
-        {% endfor %}
+    <table>
+        {% for i in range(row): %}
+        {% if i%2==1: %}
+        <tr>
+            {% for j in range(column): %}
+            {% if j%2==1: %}
+            <td class="color1"></td>
+            {% endif %}
+            {% if j%2==0: %}
+            <td class="color2"></td>
+            {% endif %}
+            {% endfor %}
+        </tr>
         {% endif %}
-        {% if i % 2 ==1%}
-        {% for k in range(8) %}
-        <div class="box2"></div>
-        {% endfor %}
+        {% if i%2==0: %}
+        <tr>
+            {% for j in range(column): %}
+            {% if j%2==1: %}
+            <td class="color2"></td>
+            {% endif %}
+            {% if j%2==0: %}
+            <td class="color1"></td>
+            {% endif %}
+            {% endfor %}
+        </tr>
         {% endif %}
+
         {% endfor %}
-
-
-
-
-
-    </div>
+    </table>
 </body>
 
 </html>
