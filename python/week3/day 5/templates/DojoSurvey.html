@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Index Page</h1>
+    <h3>Create a User</h3>
+    <form action='/result' method='POST'>
+        <h5>Your Name:</h5> <input type="text">
+        <h5>Dojo Location: </h5>
+        <select name="locations" id="locationSelect">
+            <option value="saudiArabia">Saudi Arabia</option>
+            <option value="unitedStates">United States</option>
+        </select>
+        <h5>Favorite Language: </h5>
+        <select name="language" id="languageSelect">
+            <option value="java">Java</option>
+            <option value="python">Python</option>
+        </select>
+        <h5>Comment (optional):</h5>
+        <textarea id="commentArea" cols="30" rows="5"></textarea>
+        <input type='submit' value='Button'>
+    </form>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+</body>
+</html>
