@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="alignContent">
+        <h1>Welcome to the great Number Game!</h1>
+        <p> I am thinking of a number between 1 and 100</p>
+        <p>Take a guess!</p>
+        {% comment %} != meaning the user havent answered yet {% endcomment %}
+        {% if request.session.Answer > -1 %}
+        {% if request.session.Answer > request.session.result %}
+        <div class="redBox">
+            <h1>Too high!</h1>
+        </div>
+        {% elif request.session.Answer < request.session.result %} <div class="redBox">
+            <h1>Too low!</h1>
+            <h1>{{result}}</h1>
+    </div>
+    {% elif request.session.Answer == request.session.result %}
+    <div class="greenBox">
+
+        <h1>{{request.session.result}} was the </h1>
+        <h1>number!</h1>
+        <form action="/reset" method="get">
+            <input name="reset" id="reset" class="btn btn-primary" type="submit" value="Play Again!">
+        </form>
+    </div>
+    {% endif %}
+    {% endif %}
+    <!-- csrf -->
+    {% if request.session.Answer != request.session.result %}
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="answerSubmition">
+            <input type="text" min="1" max="100" name="Answer">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+    {% endif %}
+    </div>
+</body>
+
+</html>

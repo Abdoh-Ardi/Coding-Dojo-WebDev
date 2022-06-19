@@ -1,0 +1,25 @@
+.redBox {
+    height: 200px;
+    width: 200px;
+    background-color: red;
+    text-align: center;
+    text-decoration: white;
+}
+
+.greenBox {
+    height: 200px;
+    width: 200px;
+    background-color: greenyellow;
+    text-align: center;
+    text-decoration: white;
+}
+.alignContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.answerSubmition{
+    display: flex;
+    flex-direction: column;
+}
