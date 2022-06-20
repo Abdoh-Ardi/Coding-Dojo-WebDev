@@ -1,0 +1,15 @@
+from usersShell.models import *
+firstUser = User.objects.create(first_name="Abdoh", last_name="Ardi", email="email@email.com",age=24)
+secondUser = User.objects.create(first_name="khaled", last_name="Ardi", email="email@email.com",age=26)
+thirdUser = User.objects.create(first_name="Ahmed", last_name="Ardi", email="email@email.com",age=26)
+
+allUsers=User.objects.all()
+lastUser=User.objects.last()
+firstUser=User.objects.first()
+
+pancakeUser=User.objects.get(id=3)
+pancakeUser.last_name= "pancakes"
+deletedUser=User.objects.get(id=2).delete()
+
+sortedUsers = User.objects.all().order_by("first_name")
+descendingSortedUsers = User.objects.all().order_by("-first_name")
