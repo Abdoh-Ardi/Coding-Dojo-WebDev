@@ -9,6 +9,7 @@ firstUser=User.objects.first()
 
 pancakeUser=User.objects.get(id=3)
 pancakeUser.last_name= "pancakes"
+pancakesUser.save()
 deletedUser=User.objects.get(id=2).delete()
 
 sortedUsers = User.objects.all().order_by("first_name")
