@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+    {% block content %}
+    {% for message in messages %}
+        <div class="{{ message.tags }}">{{ message }}</div>
+    {% endfor %}
+    {% if "loggedInUserId" not in request.session %}
+    <h1>Welcome</h1>
+    <div class="aligner">
+        <div class="registerSpace">
+            <h1>Register</h1>
+            <form action="/register" method="post">
+                {% csrf_token %}
+                
+                <p>Name: <input type="text" name="name"></p>
+                <p>UserName: <input type="text" name="username"></p>
+                <p>Password: <input type="text" name="password"></p>
+                <p>*password should be atleast 8 characters</p>
+                <p>Confirm PW: <input type="text" name="confirmPW"></p>
+                <p>Date Hired: <input type="date" name="dateHired"> </p>
+                <input type="submit" value="Register">
+            </form>
+        </div>
+        <div class="loginSpace">
+            <h1>Login</h1>
+            <form action="/login" method="post">
+                {% csrf_token %}
+               
+                <p>UserName: <input type="text" name="username"></p>
+                <p>Password: <input type="text" name="password"></p>
+                <input type="submit" value="Login">
+            </form>
+        </div>
+    </div>
+    {% endif %}
+    {% endblock content %}

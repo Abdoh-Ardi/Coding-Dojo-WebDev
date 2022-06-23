@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% for message in messages %}
+<div class="{{ message.tags }}">{{ message }}</div>
+{% endfor %}
+
+{% block content %}
+<h1>{{wish.name}}</h1>
+<h2>people who added this item</h2>
+{% for user in users %}
+<h5 >{{ user.name }}</div>
+{% endfor %}
+
+{% endblock content %}

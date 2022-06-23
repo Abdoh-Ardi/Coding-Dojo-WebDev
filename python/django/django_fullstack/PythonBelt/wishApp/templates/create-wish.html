@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% for message in messages %}
+<div class="{{ message.tags }}">{{ message }}</div>
+{% endfor %}
+
+{% block content %}
+<h1>Create a new wish list item</h1>
+<form action="" method="post">
+    {% csrf_token %}
+    <p>Item/product <input type="text" name="item"></p>
+    <input type="submit" value="Add">
+</form>
+{% endblock content %}

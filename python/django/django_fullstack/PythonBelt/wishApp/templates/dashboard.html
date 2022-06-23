@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% block content %}
+{% for message in messages %}
+<div class="{{ message.tags }}">{{ message }}</div>
+{% endfor %}
+
+{% if "loggedInUserId" in request.session %}
+<h1>Hello, {{user.name}}</h1>
+<h2>Your wish list</h2>
+{% if not wishList %}
+<div class="alert alert-info">There are no wishes</div>
+{% else %}
+<table class="table table-striped">
+    <tr>
+        <td>Item</td>
+        <td>Added By</td>
+        <td>Date Added</td>
+        <td>Action</td>
+    </tr>
+    {% for wish in wishList %}
+    <tr>
+        <td><a href="/wish_items/{{wish.id}}">{{ wish.item }}</a></td>
+        <td>{{ wish.Addedby.name }}</td>
+        <td>{{wish.dateAdded}}</td>
+        <td>
+            <form action="/wish/{{ wish.id }}/delete" method="post">
+                {% csrf_token %}
+                <input type="submit" class="btn btn-danger" value="Delete">
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endif %}
+
+<h2>Other's wish list</h2>
+{% if not otherWishList %}
+<div class="alert alert-info">There are no wishes</div>
+{% else %}
+<table class="table table-striped">
+    <tr>
+        <td>Item</td>
+        <td>Added By</td>
+        <td>Date Added</td>
+        <td>Action</td>
+    </tr>
+    {% for wish in otherWishList %}
+    <tr>
+
+        <td><a href="/wish_items/{{wish.id}}">{{ wish.item }}</a></td>
+
+
+        <td>{{ wish.Addedby.name }}</td>
+        <td>{{wish.dateAdded}}</td>
+        <td>
+            <form action="/wish/{{ wish.id }}/add" method="post">
+                {% csrf_token %}
+                <input type="submit" class="btn btn-info" value="Add to my wish list">
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endif %}
+
+
+<a href="/wish_items/create">Add wish</a>
+{% endif %}
+
+{% endblock content %}
