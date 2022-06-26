@@ -38,7 +38,7 @@
         </table>
         <hr>
         <h1>Add a User</h1>
-        <form method="post" class="form-group">
+        <form action="/userShell/form" method="post" class="form-group">
             <!-- csrf -->
             {% csrf_token %}
             <p>First Name <input type="text" name="FirstName"></p>
