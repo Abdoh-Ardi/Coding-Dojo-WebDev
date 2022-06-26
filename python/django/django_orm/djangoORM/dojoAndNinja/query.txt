@@ -1,0 +1,49 @@
+from ninjaAndDojo import *
+jeddahDojo = Dojos.objects.create(
+    name="jeddahDojo", city="Jeddah", state="mekkah")
+ryiadahDojo = Dojos.objects.create(
+    name="ryiadahDojo", city="ryiadah", state="ryiadah")
+mekkahDojo = Dojos.objects.create(
+    name="mekkahDojo", city="mekkah", state="mekkah")
+
+
+jeddahDojo.delete()
+ryiadahDojo.delete()
+mekkahDojo.delete()
+
+jeddahDojo = Dojos.objects.create(
+    name="jeddahDojo", city="Jeddah", state="mekkah")
+ryiadahDojo = Dojos.objects.create(
+    name="ryiadahDojo", city="ryiadah", state="ryiadah")
+mekkahDojo = Dojos.objects.create(
+    name="mekkahDojo", city="mekkah", state="mekkah")
+
+
+ninja1 = Ninjas.objects.create(
+    dojo_id=1, name="ninja1", city="Jeddah", dojo=jeddahDojo)
+ninja2 = Ninjas.objects.create(
+    dojo_id=2, name="ninja2", city="Jeddah", dojo=jeddahDojo)
+ninja3 = Ninjas.objects.create(
+    dojo_id=3, name="ninja3", city="Jeddah", dojo=jeddahDojo)
+
+ninja4 = Ninjas.objects.create(
+    dojo_id=4, name="ninja4", city="ryiadah", dojo=ryiadahDojo)
+ninja5 = Ninjas.objects.create(
+    dojo_id=5, name="ninja5", city="ryiadah", dojo=ryiadahDojo)
+ninja6 = Ninjas.objects.create(
+    dojo_id=6, name="ninja6", city="ryiadah", dojo=ryiadahDojo)
+
+ninja7 = Ninjas.objects.create(
+    dojo_id=7, name="ninja7", city="mekkah", dojo=mekkahDojo)
+ninja8 = Ninjas.objects.create(
+    dojo_id=8, name="ninja8", city="mekkah", dojo=mekkahDojo)
+ninja9 = Ninjas.objects.create(
+    dojo_id=9, name="ninja9", city="mekkah", dojo=mekkahDojo)
+
+jeddahNinjas=jeddahDojo.ninjas.all()
+mekkahNinjas=mekkahDojo.ninjas.all()
+
+ninja9Dojo= ninja9.dojo.name()
+
+AseerDojo = Dojos.objects.create(
+    name="AseerDojo", city="Aseer", state="mekkah", desc="new description")
