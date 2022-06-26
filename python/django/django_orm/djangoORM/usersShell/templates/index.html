@@ -8,15 +8,18 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <title>Document</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 
 <body>
 
-    <div class="aligner">
-        <h1>All the Users</h1>
+    <div class="d-flex flex-column justify-content-center p-2  align-items-center">
+        <h1 class="center">All the Users</h1>
 
         <!--consider scrollable table using overflow-y-->
-        <table >
+        <table class="table">
             <tr>
                 <td>ID</td>
                 <td>Name</td>
@@ -24,27 +27,32 @@
                 <td>Age</td>
             </tr>
             <!-- generate Table -->
-            {% for user in usersList %}{% endfor %}
+            {% for user in usersList %}
             <tr>
-                <td>{{ID}}</td>
-                <td>{{Name}}</td>
-                <td>{{Email}}</td>
-                <td>{{Age}}</td>
+                <td>{{user.id}}</td>
+                <td>{{user.first_name}} {{user.last_name}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.age}}</td>
             </tr>
+            {% endfor %}
         </table>
-
+        <hr>
         <h1>Add a User</h1>
-        <form method="post">
+        <form method="post" class="form-group">
             <!-- csrf -->
             {% csrf_token %}
             <p>First Name <input type="text" name="FirstName"></p>
             <p>Last Name <input type="text" name="LastName"></p>
+            <p>Email <input type="text" name="Email"></p>
             <p>Age <input type="text" name="Age"></p>
             <button type="submit" class="btn btn-primary">Add</button>
 
         </form>
     </div>
-
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
