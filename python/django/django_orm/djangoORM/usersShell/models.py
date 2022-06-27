@@ -1,4 +1,4 @@
-import email
+
 from operator import truediv
 from statistics import mode
 from django.db import models

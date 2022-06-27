@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="d-flex p-3 justify-content-center">
+        <div >
+            <h1>Add a dojo</h1>
+            <form action="/dojoAndNinja/addDojo" method="post">
+                {% csrf_token %}
+                <p>Name <input type="text" name="Name"></p>
+                <p>City <input type="text" name="City"></p>
+                <p>State <input type="text" name="State"></p>
+                <input type="submit" value="Add">
+            </form>
+        </div>
+        <div class="ml-2">
+            <h1>Add a ninja</h1>
+            <form action="/dojoAndNinja/addNinja" method="post">
+                {% csrf_token %}
+                <p>First Name <input type="text" name="FirstName"></p>
+                <p>Last Name <input type="text" name="LastName"></p>
+                <p>Dojo <select name="SelectDojo" >
+                    <option value="" disabled selected>Select your Dojo</option>
+                        <!-- for loop for dojos -->
+                    {% for dojo in dojoList %}
+                    <option value="{{dojo.id}}">{{dojo.name}}</option>
+                    {% endfor %}
+                    </select></p>
+                <input type="submit" value="Add">
+            </form>
+        </div>
+    </div>
+    <hr>
+    <h1>All the Dojos</h1>
+    <!-- for loop -->
+    {% for dojo in dojoList %}
+    <p> <strong>ninjas At the {{dojo.name}}</strong> </p>
+        {% for ninja in dojo.ninjas.all %}
+    <ul>
+        <!-- nested for loop -->
+        <li>{{ninja.first_name}}{{ninja.last_name}}</li>
+    </ul>
+        {% endfor %}
+    {% endfor %}
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -16,6 +16,6 @@ class Ninjas(models.Model):
     dojo_id = models.IntegerField()
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
-    dojo = models.ForeignKey(
+    dojoCenter = models.ForeignKey(
         Dojos, related_name="ninjas", on_delete=models.CASCADE)
 
