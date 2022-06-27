@@ -1,0 +1,49 @@
+from ninjaAndDojo import *
+
+cSharp = Books.objects.create(title="C Sharp")
+java = Books.objects.create(title="Java")
+python = Books.objects.create(title="Python")
+php = Books.objects.create(title="PHP")
+ruby = Books.objects.create(title="Ruby")
+
+author1 = Authors.objects.create(first_name="Jane",last_name="Austen")
+author2 = Authors.objects.create(first_name="Emily",last_name="Dickinson")
+author3 = Authors.objects.create(first_name="Fyodor",last_name="Dostoevsky")
+author4 = Authors.objects.create(first_name="William",last_name="Shakespeare")
+author5 = Authors.objects.create(first_name="Lau",last_name="Tzu")
+
+cSharp.title = "C#"
+cSharp.save()
+
+author4.first_name = "Bill"
+author4.save()
+
+author1.books.add(cSharp)
+author1.books.add(java)
+
+author2.books.add(cSharp)
+author2.books.add(java)
+author2.books.add(python)
+
+author3.books.add(cSharp)
+author3.books.add(java)
+author3.books.add(python)
+author3.books.add(php)
+
+
+author4.books.add(cSharp)
+author4.books.add(java)
+author4.books.add(python)
+author4.books.add(php)
+author4.books.add(ruby)
+
+python.authors.all()
+
+python.authors.remove(author1)
+
+java.authors.add(author5)
+
+author3.books.all()
+
+ruby.authors.all()
+
