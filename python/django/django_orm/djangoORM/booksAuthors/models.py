@@ -10,7 +10,7 @@ class Books(models.Model):
     desc = models.TextField(default="No description was provided.")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-
+    
 
 class Authors(models.Model):
     first_name = models.CharField(max_length=45)
@@ -19,7 +19,3 @@ class Authors(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     notes= models.TextField(default="No notes were provided")
     books = models.ManyToManyField(Books, related_name="authors")
-
-
-
-
