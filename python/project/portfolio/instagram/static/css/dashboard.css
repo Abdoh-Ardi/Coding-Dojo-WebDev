@@ -1,0 +1,23 @@
+.feed{
+    
+    height: 2000px;
+    width: 900px;
+    margin-right: 100px;
+    right: 100px;
+    background-color: aqua;
+}
+.aligner{
+    margin: 0px auto;
+}
+.sideFixedProfileInfo{
+    position: fixed;
+    left: 1504.27px;
+}
+.sideBar{
+    position: sticky;
+    height: 200px;
+}
+img.profileImage{
+    border-radius: 50%;
+    width: 10%;
+}

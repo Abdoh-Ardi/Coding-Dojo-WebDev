@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block css %}
+{% load static %}
+<link rel="stylesheet" href="{%static 'css/dashboard.css'%}">
+{% endblock css %}
+{% block profileImg %} https://www.w3schools.com/howto/img_avatar.png {% endblock profileImg %}
+
+
+{% block content %}
+<div class="container d-flex justify-content-center">
+    <div class="col-9">
+        <div class="row">
+            <div class="col-8">
+                <!-- start of stories -->
+                <div class="card">
+                    <div class="card-body">
+                        <!-- TODO for loop to generate content -->
+                        <ul>
+                            <li class="list-inline-item">
+                                <button>
+                                    <div class="d-flex flex-column align-items-center">
+
+                                        <div
+                                            class="rounded-circle overflow-hidden d-flex justify-content-center align-items-center topbar-profile-photo">
+                                            <!-- TODO profile image -->
+                                            <img src=" https://www.w3schools.com/howto/img_avatar.png  "
+                                                alt="Your Profile Image"
+                                                style="transform: scale(1.5); width:100%;position:absolute; left:0;">
+                                        </div>
+                                        <small>{{username}}</small>
+                                    </div>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- end of stories -->
+            </div>
+            <div class="col-4"></div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

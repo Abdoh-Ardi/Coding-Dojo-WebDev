@@ -18,5 +18,8 @@ from django.urls import path, include
 
 urlpatterns = [
     path('', include('instagram.urls')),
+    # p/ for content
+    path('p/', include('contentApp.urls')),
+    path('accounts/', include('loginAndRegistration.urls')),
     # path('admin/', admin.site.urls),
 ]

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form action="/p/" method="post">
+    {% csrf_token %}
+    <input type="text" name="url" placeholder="url">
+    <input type="text" name="title" placeholder="Tilte">
+    <input type="text" name="description" placeholder="Description">
+    <input type="password" name="password" placeholder="password">
+    <button type="submit">Create Picture</button>
+    {% if messages %}
+    {% for message in messages %}
+    <p style=color:red;>{{ message }}</p>
+    {% endfor %}
+    {% endif %}
+</form>
+{% endblock content %}

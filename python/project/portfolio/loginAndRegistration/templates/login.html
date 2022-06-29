@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/loginForm.css'%}">
+{% endblock css %}
+{% block content %}
+
+<div id="wrapper">
+    <div class="main-content">
+        <div class="header">
+            <!-- TODO get image from elsewhere -->
+            <img src="https://i.imgur.com/zqpwkLQ.png" />
+        </div>
+        <form method="post" class="l-part">
+            {% csrf_token %}
+            <input type="text" placeholder="Username" name="username" class="input-1" />
+            <div class="overlap-text">
+                <input type="password" placeholder="Password" name="password" class="input-2" />
+                <a href="password/reset/">Forgot?</a>
+            </div>
+            <input type="submit" value="Log in" class="btn" />
+        </form>
+            <!-- TODO better format error -->
+            {% if messages %}
+                    {% for message in messages %}
+                    
+                    <p style=color:red;>{{ message }}</p>
+                    
+                    {% endfor %}
+                    {% endif %}
+        </div>
+    </div>
+    <div class="sub-content">
+        <div class="s-part">
+            Don't have an account?<a href="./emailsignup">Sign up</a>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}
