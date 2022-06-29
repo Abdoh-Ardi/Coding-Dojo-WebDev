@@ -40,10 +40,11 @@ def success(request):
     if 'user_id' not in request.session:
         return redirect('/')
     this_user = Registration.objects.filter(id=request.session['user_id'])
-    context = {
-        'user': this_user[0]
-    }
-    return render(request, 'dashboard.html', context)
+    # context = {
+    #     'user': this_user[0]
+    # }
+    # return render(request, 'dashboard.html', context)
+    return redirect('/wall')
 
 
 def login_user(request):
