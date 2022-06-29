@@ -36,6 +36,12 @@
         </div>
         <input class="btn btn-primary" type="submit" value="Submit">
     </form>
+    <ul class="messages">
+        {% for message in messages %}
+        {% if message.tags %}
+        <li class="{{message.tags}}">{{ message }}</li>
+        {% endif %}
+        {% endfor %}
 </body>
 
 </html>

@@ -18,6 +18,13 @@
         <div id="position">
             <form action="/shows/create" method="POST" class="col-md-6">
                 {% csrf_token %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    {% if message.tags %}
+                    <li class="{{message.tags}}">{{ message }}</li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
                 <h1>Add a New Show</h1>
                 <div class="form-group">
                     <label for="title">Title</label>
@@ -37,7 +44,7 @@
                     <label for="description">Description</label>
                     <textarea type="text" name="description" id="description" rows="2" class="form-control"></textarea>
                 </div>
-                <button class="btn btn-secondary">Create</button>
+                <input class="btn btn-secondary" type="submit" value="Create">
             </form>
         </div>
     </div>
