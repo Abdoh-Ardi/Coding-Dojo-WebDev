@@ -1,6 +1,7 @@
 from django.db import models
 import datetime
 
+
 class ShowManager(models.Manager):
     def basic_validator(self, postData):
         errors = {}
@@ -24,3 +25,4 @@ class Show(models.Model):
     description = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    objects = ShowManager()
