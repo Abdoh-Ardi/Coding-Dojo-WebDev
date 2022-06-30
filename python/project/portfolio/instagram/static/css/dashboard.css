@@ -1,23 +1,18 @@
-.feed{
-    
-    height: 2000px;
-    width: 900px;
-    margin-right: 100px;
-    right: 100px;
-    background-color: aqua;
+.story-profile-photo {
+    width: 56px;
+    height: 56px;
+    position: relative;
+    border-width: 2px !important;
 }
-.aligner{
-    margin: 0px auto;
+
+.post-profile-photo {
+    width: 46px;
+    height: 46px;
+    position: relative;
+    margin-right: 15px;
+    border-width: 2px !important;
 }
-.sideFixedProfileInfo{
-    position: fixed;
-    left: 1504.27px;
-}
-.sideBar{
-    position: sticky;
-    height: 200px;
-}
-img.profileImage{
-    border-radius: 50%;
-    width: 10%;
+
+.post-image-resizer {
+    width: 100%;
 }

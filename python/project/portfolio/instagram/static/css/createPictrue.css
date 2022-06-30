@@ -1,3 +1,8 @@
+{% block css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/createPicture.css'%}">
+{% endblock css %}
+
 #wrapper {
     width: 500px;
     height: 50%;
@@ -37,7 +42,6 @@
     margin: auto;
     position: relative;
     left: 40px;
-    
 }
 
 .input-1,
@@ -77,18 +81,12 @@
 }
 
 .sub-content {
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
-    align-items: center;
-    align-content: center;
-    justify-items: center;
-    width: 455px;
+    width: 250px;
     height: 40%;
     margin: 10px auto;
+    border: 1px solid #e6e6e6;
+    padding: 20px 50px;
     background-color: #fff;
-    border: 2px solid #e6e6e6;
-    padding: 40px 50px;
 }
 
 .s-part {

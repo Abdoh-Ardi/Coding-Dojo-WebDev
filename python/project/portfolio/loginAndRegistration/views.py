@@ -52,3 +52,8 @@ def register(request):
             messages.success(request, "Insatgram User has been created")
             return redirect("/")
     return render(request, "register.html")
+
+def logout(request):
+    request.session.clear()
+    messages.success(request, "You have been logged out!")
+    return redirect("/login")

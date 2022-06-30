@@ -1,3 +1,4 @@
+
 #wrapper {
     width: 500px;
     height: 50%;
@@ -37,7 +38,6 @@
     margin: auto;
     position: relative;
     left: 40px;
-    
 }
 
 .input-1,
@@ -50,20 +50,6 @@
     border-radius: 3px;
 }
 
-.overlap-text {
-    position: relative;
-}
-
-.overlap-text a {
-    position: absolute;
-    top: 8px;
-    right: 10px;
-    color: #003569;
-    font-size: 14px;
-    text-decoration: none;
-    font-family: 'Overpass Mono', monospace;
-    letter-spacing: -1px;
-}
 
 .btn {
     width: 100%;
@@ -76,38 +62,7 @@
     border-radius: 3px;
 }
 
-.sub-content {
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
-    align-items: center;
-    align-content: center;
-    justify-items: center;
-    width: 455px;
-    height: 40%;
-    margin: 10px auto;
-    background-color: #fff;
-    border: 2px solid #e6e6e6;
-    padding: 40px 50px;
-}
 
-.s-part {
-    text-align: center;
-    font-family: 'Overpass Mono', monospace;
-    word-spacing: -3px;
-    letter-spacing: -2px;
-    font-weight: normal;
-}
-
-.s-part a {
-    text-decoration: none;
-    cursor: pointer;
-    color: #3897f0;
-    font-family: 'Overpass Mono', monospace;
-    word-spacing: -3px;
-    letter-spacing: -2px;
-    font-weight: normal;
-}
 
 /* input:focus {
       background-color: yellow;

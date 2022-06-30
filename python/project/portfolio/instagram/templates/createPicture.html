@@ -1,17 +1,25 @@
 {% extends 'base.html' %}
-
+{% block css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/createPictrue.css'%}">
+{% endblock css %}
+{% block profileImg %}{{user.profile_picture}}{% endblock profileImg %}
 {% block content %}
-<form action="/p/" method="post">
-    {% csrf_token %}
-    <input type="text" name="url" placeholder="url">
-    <input type="text" name="title" placeholder="Tilte">
-    <input type="text" name="description" placeholder="Description">
-    <input type="password" name="password" placeholder="password">
-    <button type="submit">Create Picture</button>
-    {% if messages %}
-    {% for message in messages %}
-    <p style=color:red;>{{ message }}</p>
-    {% endfor %}
-    {% endif %}
-</form>
+<div id="wrapper">
+    <div class="main-content">
+        <div class="header">
+            <!-- TODO get image from elsewhere -->
+            <img src="https://i.imgur.com/zqpwkLQ.png" />
+        </div>
+        <form action="/p" method="post" class="l-part">
+            {% csrf_token %}
+            <input type="text" name="url" placeholder="url" class="input-1">
+            <input type="text" name="title" placeholder="Tilte" class="input-1">
+            <input type="text" name="description" placeholder="Description" class="input-1">
+            
+            <button type="submit" class="btn">Create Picture</button>
+        </form>
+    </div>
+</div>
+
 {% endblock content %}

@@ -43,7 +43,6 @@ class AccountManager(models.Manager):
             errors['login_password'] = "Password should be at least 8 characters"
         return errors
 
-
 class User(models.Model):
     # TODO optional phone number validation
     # username = models.CharField(max_length=60)
@@ -54,6 +53,7 @@ class User(models.Model):
     username = models.CharField(max_length=255, primary_key=True)
     password = models.CharField(max_length=128)
     fullName = models.CharField(max_length=100)
+    profile_picture=models.URLField(default="https://www.w3schools.com/howto/img_avatar.png")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     # TODO prepare associations with other tables from other apps
