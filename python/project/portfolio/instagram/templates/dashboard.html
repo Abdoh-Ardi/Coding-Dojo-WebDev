@@ -28,7 +28,8 @@
                                                                     position:absolute;
                                                                     left:0;">
                                                     </div>
-                                                    <small>{{ user.username }}</small>
+                                                    <!-- TODO story user check -->
+                                                    <small>{{ story.user.username }}</small>
                                                 </div>
                                             </button>
                                         </li>
@@ -64,10 +65,9 @@
                                                              src="{{ post.url }}"
                                                              alt="{{ post.title }}">
                                                     </div>
-                                                    <!-- TODO card buttons implementation-->
                                                     {% comment %} TODO implement buttons functionality  {% endcomment %}
-                                                    <div class="d-flex justify-content-between">
-                                                        <ul class="list-inline m-2">
+                                                    <div class="d-flex justify-content-between ps-3 pe-3 pt-3 pb-1">
+                                                        <ul class="list-inline mb-0">
                                                             <li class="list-inline-item">
                                                                 <button class="btn p-0">
                                                                     <svg xmlns="http://www.w3.org/2000/svg"
@@ -114,7 +114,7 @@
                                                         {% if False %}
                                                             {% comment %} TODO if user has this image saved show filled button with AJAX maybe{% endcomment %}
                                                         {% else %}
-                                                            <button class="btn m-2 p-0">
+                                                            <button class="btn p-0">
                                                                 <svg xmlns="http://www.w3.org/2000/svg"
                                                                      width="16"
                                                                      height="16"
@@ -127,6 +127,43 @@
                                                         {% endif %}
                                                     </div>
                                                 </div>
+                                                {% comment %} Under the post image {% endcomment %}
+                                                <div class="ps-3 pe-3 pb-2">
+                                                    <!-- FIXME card bottom informations retrieval and design -->
+                                                    <strong class="d-block">{{ likes|default:"0" }} likes</strong>
+                                                    <strong class="d-block">{{ post.publisher.username }}</strong>
+                                                    <!-- TODO more button if the description is too long -->
+                                                    <p class="mb-1">{{ image.description|default:"No description" }}</p>
+                                                    <!-- TODO if condition are there comments? do something if the post is new -->
+                                                    <button class="btn p-0">
+                                                        <!-- FIXME comments count  -->
+                                                        <span class="text-muted">View all {{ comments.count }} comments</span>
+                                                    </button>
+                                                    <!-- TODO display comments for a few users NOTE: may not be necessary -->
+                                                    <!-- FIXME this feature maybe old in the real website-->
+                                                    <div>
+                                                        <div>
+                                                            <strong class="d-block">{{ comments.user.username }}</strong>
+                                                            <span>{{ comments.user.comment }}</span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- TODO generate time correctly -->
+                                                    <small class="text-muted">1 hour ago {{ time }}</small>
+                                                </div>
+                                                {% comment %} TODO leave a comment section {% endcomment %}
+                                                {% comment %} FIXME add the emoji on the right and consider using flex for this {% endcomment %}
+                                                <div class="position-relative comment-box">
+                                                    <form method="post">
+                                                        {% csrf_token %}
+                                                        <!-- TODO popup an emoji list for this -->
+                                                        <button class="btn btn-emoji" type=""></button>
+                                                        <input placeholder="Add a comment..."
+                                                               class="w-100 border-0 p-3"
+                                                               type="text"
+                                                               name="commentMessage">
+                                                        <button class="btn btn-primary position-absolute btn-post" type="submit">Post</button>
+                                                    </form>
+                                                </div>
                                             </div>
                                         </div>
                                         <!-- end for loop content -->
@@ -134,7 +171,56 @@
                                 </div>
                                 <!-- end of posts -->
                             </div>
-                            <div class="col-4"></div>
+                            <!-- start of right side -->
+                            <div class="col-4">
+                                <!-- start of right side -->
+                                <div class=" d-flex flex-row align-items-center">
+                                    {% comment %} FIXME profile link is not for current user{% endcomment %}
+                                    <a href="{{ username }}">
+                                        <div class="rounded-circle overflow-hidden d-flex justify-content-center align-items-center side-profile-photo">
+                                            <!-- TODO profile image -->
+                                            <img src="{{ userProfileImg }}"
+                                                 alt="Your Profile Image"
+                                                 style="transform: scale(1.5);
+                                                        width:100%;
+                                                        position:absolute;
+                                                        left:0;">
+                                        </div>
+                                    </a>
+                                    <div class="ms-3">
+                                        <span class="profile-info-username">{{ username }}</span>
+                                        <span class="profile-info-name">{{ fullName }}</span>
+                                    </div>
+                                </div>
+                                <div class="mt-4">
+                                    <div class="d-flex flex-row justify-content-between">
+                                        <small>Suggestions For You</small>
+                                        <!-- TODO future implement this -->
+                                        <small>See All</small>
+                                    </div>
+                                    <!-- suggested users profiles -->
+                                    <div >
+                                        <div class="d-flex flex-row justify-content-between my-3">
+                                            <!--TODO for loop to generate follow suggestions -->
+                                            <div class="d-flex flex-row align-items-center">
+                                                <div class="rounded-circle overflow-hidden d-flex justify-content-center align-items-center suggest-profile-photo">
+                                                    <!-- TODO profile image -->
+                                                    <img src="{{ userProfileImg }}"
+                                                         alt="Your Profile Image"
+                                                         style="transform: scale(1.5);
+                                                                width:100%;
+                                                                position:absolute;
+                                                                left:0;">
+                                                </div>
+                                                <strong class="ms-2">{{ username }}</strong>
+                                            </div>
+                                            <button class="btn btn-primary  p-0 btn-suggest-follow btn-sm">Follow</button>
+                                            <!-- end for loop generating follow suggestion -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end of right side -->
                         </div>
                     </div>
                 </div>

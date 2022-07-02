@@ -17,13 +17,14 @@ def index(request):
         # show all pictures and exclude logged user
     pictures = Picture.objects.exclude(publisher=User.objects.get(
         username=request.session["loggedInUserId"]))
-
+    user = User.objects.get(username=request.session["loggedInUserId"])
     context = {
 
         "pictures": pictures,
         "loggedIn": True,  # allows the navbar to be displayed
-        "userProfileImg": User.objects.get(username=request.session["loggedInUserId"]).profile_picture,
-        "username": User.objects.get(username=request.session["loggedInUserId"]).username,
+        "userProfileImg": user.profile_picture,
+        "username": user.username,
+        "fullName": user.fullName
         
         # stories: #retrieve user stories
     }
@@ -62,7 +63,7 @@ def profile(request, username):
     # if User.objects.get(username=username).exists():
     user = User.objects.get(username=username)
     
-    # TODO:
+    # TODO:if user exists d
     # if user.exists():
     context = {
         "userImages": user.publisher.all(),
