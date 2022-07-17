@@ -11,3 +11,4 @@ my_enviroments/
 *.cpython-310.pyc
 foo.py
 settings.py
+*.class
