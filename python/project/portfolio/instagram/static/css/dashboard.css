@@ -18,7 +18,8 @@
     width: 100%;
 }
 
-.btn-post, .btn-suggest-follow{
+.btn-post,
+.btn-suggest-follow {
     right: 0;
     bottom: 0;
     top: 0;
@@ -68,7 +69,7 @@
     font-size: 12px;
 }
 
-.suggest-profile-photo{
+.suggest-profile-photo {
     width: 46px;
     height: 46px;
     position: relative;
@@ -76,6 +77,27 @@
     /* margin-right: 15px; */
     border-width: 2px !important;
 }
+
 /* .btn-suggest-follow{
 
 } */
+
+
+.posts-link-hover:hover,
+.posts-link-hover {
+    color: black;
+    text-decoration: none;
+}
+
+
+.posts-link-hover:focus {
+    color: rgb(184, 184, 184);
+}
+.right-side-aligner{
+    /* position: fixed; */
+    left: 1363px;
+    z-index: 1;
+    /* transform: translate(50%); */
+    top:200px;
+    /* width: 100%; */
+}

@@ -1,5 +1,5 @@
 from multiprocessing import context
-from pickle import TRUE
+
 from django.shortcuts import redirect, render
 
 from loginAndRegistration.models import User

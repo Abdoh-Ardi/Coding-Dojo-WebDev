@@ -5,6 +5,7 @@
 
 body {
     background-color: #eee;
+    min-width: fit-content;
 }
 
 .topbar-profile-photo {
@@ -15,4 +16,21 @@ body {
 
 .link-menu{
     color: black;
+}
+.drop-menu-square{
+    position: relative;
+    left: 5px;
+    bottom: 15px;
+    background-color: white;
+    height: 15px;
+    width: 15px;
+    transform: rotate(45deg);
+    border: none;
+    box-shadow: 0 0 6px 0 lightgrey ;
+}
+.sticky-navbar-content{
+    position: fixed ;
+    width: 100%;
+    z-index: 2;
+    /* margin-top: 10px; */
 }
