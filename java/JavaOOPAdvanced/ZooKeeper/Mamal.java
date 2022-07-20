@@ -1,3 +1,5 @@
+package JavaOOPAdvanced.ZooKeeper;
+
 public class Mamal {
     private int energyLevel;
 

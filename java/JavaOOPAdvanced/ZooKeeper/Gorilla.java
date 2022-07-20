@@ -1,3 +1,4 @@
+package JavaOOPAdvanced.ZooKeeper;
 public class Gorilla extends Mamal {
     public void throwSomthing() {
         System.out.println("Gorilla has thrown something...");

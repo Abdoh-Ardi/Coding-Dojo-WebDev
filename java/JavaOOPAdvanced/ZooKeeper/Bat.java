@@ -1,3 +1,4 @@
+package JavaOOPAdvanced.ZooKeeper;
 public class Bat extends Mamal{
     public Bat(){
         setEnergyLevel(300);

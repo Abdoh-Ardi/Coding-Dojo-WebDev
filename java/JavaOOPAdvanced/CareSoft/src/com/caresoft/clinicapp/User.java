@@ -1,4 +1,4 @@
-package com.caresoft.clinicapp;
+package JavaOOPAdvanced.CareSoft.src.com.caresoft.clinicapp;
 public class User {
     protected Integer id;
     protected int pin;
