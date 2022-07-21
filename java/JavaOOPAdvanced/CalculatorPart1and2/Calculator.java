@@ -1,9 +1,11 @@
 package JavaOOPAdvanced.CalculatorPart1and2;
 
 public class Calculator implements java.io.Serializable {
-    private double operandOne;
-    private double operandTwo;
-    private String operation;
+    private boolean resultUsed;
+    private boolean operationUsed;
+    private String operation = "";// because its a non primitive datatype
+    private double operand;
+    private double result;
 
     public Calculator() {
     }
@@ -17,25 +19,81 @@ public class Calculator implements java.io.Serializable {
      *                             or
      *                             unsupported
      */
-    public double performOperation() {
-        switch (operation) {
+    public void performOperation() {
+        // FIXME consider local variable
+        switch (getOperation()) {
             case "+":
-                return operandOne + operandTwo;
+                result += operand;
+
+                break;
             case "-":
-                return operandOne - operandTwo;
-            default:
-                throw new ArithmeticException("Operation symbol not found or unsupported");
+                result -= operand;
+                break;
+            case "*":
+                result *= operand;
+                break;
+            case "/":
+                if (operand == 0) {
+                    // result /= 1;
+                    resetValues();//reset values then throw exception
+                    throw new ArithmeticException("Dividing by zero is not possible.");
+                }
+                result /= operand;
+                break;
+            case "=":
+
+                break;
+
         }
+
+    }
+
+    public void performOperation(double operand) {
+        if (!resultUsed) {
+            result = operand;
+            resultUsed = true;
+        } else {
+            this.operand = operand;
+            if (operationUsed) {
+                performOperation();
+            }
+
+        }
+
+    }
+
+    public void performOperation(String operation) {
+        setOperation(operation);
+        operationUsed = true;
+        // reset everything when =;
+        if (operation.equals("=")) {
+            resetValues();
+        }
+
+    }
+
+    private void resetValues() {
+        // resetting all other values
+        // setOperand(0);// can be removed
+        setOperandUsed(false);
+        setResultUsed(false);
+        // setOperation("");// can be removed
+        setOperationUsed(false);
     }
 
     /**
      * prints {@link #performOperation()} result
      */
-    public void getResult() {
-        System.out.println(performOperation());
+    public void getResults() {
+        System.out.println(this.result);
     }
 
-    public void setOperation(String operation) {
+    public double getResult() {
+        return this.result;
+    }
+
+    private void setOperation(String operation) {
+        operationUsed = true;
         this.operation = operation;
     }
 
@@ -43,20 +101,18 @@ public class Calculator implements java.io.Serializable {
         return operation;
     }
 
-    public double getOperandOne() {
-        return operandOne;
+    public double getOperand() {
+        return operand;
     }
 
-    public void setOperandOne(double operandOne) {
-        this.operandOne = operandOne;
+    private void setOperandUsed(boolean operandUsed) {
     }
 
-    public double getOperandTwo() {
-        return operandTwo;
+    private void setOperationUsed(boolean operationUsed) {
+        this.operationUsed = operationUsed;
     }
 
-    public void setOperandTwo(double operandTwo) {
-        this.operandTwo = operandTwo;
+    private void setResultUsed(boolean resultUsed) {
+        this.resultUsed = resultUsed;
     }
-
 }
