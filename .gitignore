@@ -13,3 +13,6 @@ foo.py
 settings.py
 *.class
 STSSpring/
+application.properties
+java/stsWorkSpace/demo1/src/main/resources/application.properties
+
