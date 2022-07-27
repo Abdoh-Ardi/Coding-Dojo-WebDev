@@ -1,4 +1,4 @@
-package com.example.demo.Daikichi;
+package com.example.demo.controllers.MvcDesignPatternAssignments.Daikichi;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

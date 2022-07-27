@@ -1,4 +1,4 @@
-package com.example.demo.counter;
+package com.example.demo.controllers.MvcDesignPatternAssignments.counter;
 
 import javax.servlet.http.HttpSession;
 

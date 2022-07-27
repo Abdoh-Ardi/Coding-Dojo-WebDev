@@ -1,4 +1,4 @@
-package com.example.demo.HelloHuman;
+package com.example.demo.controllers.MvcDesignPatternAssignments.HelloHuman;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

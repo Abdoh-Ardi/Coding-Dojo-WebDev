@@ -1,4 +1,4 @@
-package com.example.demo.examples;
+package com.example.demo.controllers.MvcDesignPatternAssignments.examples;
 
 import org.springframework.stereotype.Controller;
 
