@@ -1,4 +1,4 @@
-package com.example.demo.OmikujiForm;
+package com.example.demo.controllers.MvcDesignPatternAssignments.OmikujiForm;
 
 import java.util.Enumeration;
 
