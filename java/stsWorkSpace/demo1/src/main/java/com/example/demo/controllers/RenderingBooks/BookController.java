@@ -1,5 +1,7 @@
 package com.example.demo.controllers.RenderingBooks;
 
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,11 +21,18 @@ public class BookController {
     public BookController(BookService bookService) {
         this.bookService = bookService;
     }
-
+    @GetMapping
+    public String index(Model model) {
+        //TOKNOW: if named books it will not work conflict with page url possibly
+        List<Book> bookList= bookService.allBooks();
+        if (!bookList.isEmpty()) {
+            model.addAttribute(bookList);
+        }
+        return "RenderingBooks/index.jsp";
+    }
     @GetMapping(value = "/{bookID}")
     public String showBookDetails(@PathVariable("bookID") long id, Model model) {
         Book book = bookService.findBook(id);
-        
         if (book != null) {
             model.addAttribute(book);
         }
