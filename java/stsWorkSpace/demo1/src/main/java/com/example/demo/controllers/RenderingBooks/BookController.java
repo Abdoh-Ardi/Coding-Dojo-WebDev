@@ -39,12 +39,29 @@ public class BookController {
     }
 
     @GetMapping(value = "/{bookID}")
-    public String showBookDetails(@PathVariable("bookID") long id, Model model) {
+    public String showBookDetails(@PathVariable("bookID") Long id, Model model) {
         Book book = bookService.findBook(id);
         if (book != null) {
             model.addAttribute(book);
         }
         return "RenderingBooks/show.jsp";
+    }
+
+    @GetMapping(value = "/{bookID}/edit")
+    public String edit(@PathVariable("bookID") Long id, Model model) {
+        Book book = bookService.findBook(id);
+        model.addAttribute("book", book);
+        return "RenderingBooks/edit.jsp";
+    }
+
+    @RequestMapping(value = "/books/{id}", method = RequestMethod.PUT)
+    public String update(@Valid @ModelAttribute("book") Book book, BindingResult result) {
+        if (result.hasErrors()) {
+            return "RenderingBooks/edit.jsp";
+        } else {
+            bookService.updateBook(book);
+            return "redirect:/books";
+        }
     }
 
     @GetMapping("/new")
@@ -54,7 +71,7 @@ public class BookController {
 
     @PostMapping
     public String create(@Valid @ModelAttribute("book") Book book, BindingResult result) {
-        //TOKNOW: @valid must be followed by bindingResult
+        // TOKNOW: @valid must be followed by bindingResult
         if (result.hasErrors()) {
             return "RenderingBooks/new.jsp";
         } else {
@@ -62,6 +79,5 @@ public class BookController {
             return "redirect:/books";
         }
     }
-    
 
 }

@@ -32,7 +32,9 @@ public class BookService {
         return bookRepository.save(b);
     }
 
-    
+    public Book updateBook(Book b) {
+        return updateBook(b.getId(),b.getTitle(),b.getDescription(),b.getLanguage(),b.getNumberOfPages());
+    }
     public Book updateBook(Long id, String title, String desc, String lang, Integer numOfPages) {
         Book book = findBook(id);
         if (book != null) {
