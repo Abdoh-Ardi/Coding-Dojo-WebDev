@@ -2,24 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import SomeClassComponent from './components/SomeClassComponent'
-import LightSwitch from './components/LigthSwitch';
-// import l  from './components/LigthSwitch'
 import reportWebVitals from './reportWebVitals';
-import Header from './components/Header';
-import PersonCard from './components/PersonCard';
-import UserForm from './components/UserForm';
-import HookForm from './components/HookForm';
+import HookForm from './component/HookForm';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* <App /> */}
-    {/* <Header firstName="Abdoh" lastName="Ardi" /> */}
-    {/* <SomeClassComponent /> */}
-    {/* <LightSwitch /> */}
-    {/* <PersonCard /> */}
-    {/* <UserForm /> */}
     <HookForm />
   </React.StrictMode>
 );
