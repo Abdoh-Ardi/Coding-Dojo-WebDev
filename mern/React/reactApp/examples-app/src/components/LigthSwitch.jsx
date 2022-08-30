@@ -1,4 +1,4 @@
-const { Component } = require("react");
+import React, { Component } from 'react';
 class LightSwitch extends Component {
     constructor(props) {
         super(props);

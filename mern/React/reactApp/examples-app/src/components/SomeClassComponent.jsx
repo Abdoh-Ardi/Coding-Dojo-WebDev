@@ -1,5 +1,5 @@
-// import React, { Component } from "react";
-const { Component } = require("react");
+import React, { Component } from "react";
+// const { Component } = require("react");
 
 class SomeClassComponent extends Component {
     render() {

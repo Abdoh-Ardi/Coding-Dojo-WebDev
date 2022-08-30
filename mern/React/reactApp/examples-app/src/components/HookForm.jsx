@@ -1,5 +1,5 @@
-import { Component, useState } from "react";
-
+import React, { useState } from 'react';
+// import React, { Component, useState } from "react";
 const HookForm = (props) => {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");

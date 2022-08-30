@@ -10,6 +10,8 @@ import Header from './components/Header';
 import PersonCard from './components/PersonCard';
 import UserForm from './components/UserForm';
 import HookForm from './components/HookForm';
+import UseReducerExample from './components/useReducerExample';
+import FormValidation from './components/FormValidation';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -20,7 +22,9 @@ root.render(
     {/* <LightSwitch /> */}
     {/* <PersonCard /> */}
     {/* <UserForm /> */}
-    <HookForm />
+    <UseReducerExample />
+    <FormValidation />
+    {/* <HookForm /> */}
   </React.StrictMode>
 );
 
