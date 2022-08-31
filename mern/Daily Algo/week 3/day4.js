@@ -49,10 +49,8 @@ function funnyStringOptimized(str) {
     for (let i = 0; i < str.length / 2; i++) {
         let resultLeftSide = Math.abs(str.charCodeAt(i) - str.charCodeAt(i + 1)) == 1;
         let resultRightSide = Math.abs(str.charCodeAt(str.length - 1 - i) - str.charCodeAt(str.length - 2 - i)) == 1;
-        if (resultRightSide == resultLeftSide) {
-            continue;
-        } else {
-            return "notFunny";
+        if (resultRightSide != resultLeftSide) {
+            return "notFunny"
         }
     }
     // console.log(str);
